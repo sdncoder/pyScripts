@@ -19,7 +19,7 @@ with open("lab_ipfm_devices.txt") as switches:
         net_connect = ConnectHandler(**switch)
 
 
-        #Count the number of interfaces on each switch and print it out. Set the number equal to a variable.
+#Count the number of interfaces on each switch and print it out. Set the number equal to a variable.
 
         print('Connecting to ' + IP)
         output = net_connect.send_command('sh int status')
