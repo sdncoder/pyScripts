@@ -3,11 +3,12 @@ from netmiko import ConnectHandler
 import getpass
 
 #Prompt the user for a password upon login.
+#getpass is not encrypted, use with caution.
 my_pass = getpass.getpass()
 
-#Log into each leaf/spine switch. 
+#Log into network devices per host file
 
-with open("lab_ipfm_devices.txt") as switches:
+with open("network_devices.txt") as switches:
     for IP in switches:
         switch = {
         'device_type': 'cisco_nxos',
