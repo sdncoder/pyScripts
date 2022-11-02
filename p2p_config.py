@@ -1,3 +1,5 @@
+#login to switches, record Eth ports, add config to each port and backup config
+
 #Allows login via ssh
 from netmiko import ConnectHandler
 import getpass
