@@ -54,15 +54,15 @@ def ncs540_ssh_config(router_hostname, management_ip, management_subnet ,managem
                 if "Enter root-system username:" in output:
                     channel.send("nbcuadmin" + '\n')
                 elif "Enter secret:" in output:
-                    channel.send(f"{nbcuadmin_password}" + '\n')
+                    channel.send(f"{cuadmin_password}" + '\n')
                 elif "Enter secret again:" in output:
-                    channel.send(f"{nbcuadmin_password}" + '\n')
+                    channel.send(f"{cuadmin_password}" + '\n')
                 elif 'Username:' in output:
                     # Send the username
                     channel.send("nbcuadmin" + '\n')
                 elif 'Password:' in output:
                     # Send the password
-                    channel.send(f"{nbcuadmin_password}"+ '\n')
+                    channel.send(f"{cuadmin_password}"+ '\n')
                 time.sleep(2)
             ###
             # You are now logged in and can send commands to the device using the channel object
@@ -242,7 +242,7 @@ def nexus9300_ssh_config(router_hostname, management_ip, management_subnet ,mana
                     'conf t',
                     f'hostname {router_hostname}',
                     f'username admin password {admin_password} role network-admin',
-                    f'username nbcuadmin password {nbcuadmin_password} role network-admin',
+                    f'username cuadmin password {cuadmin_password} role network-admin',
                     f'username bcadmin password {bcadmin_password} role network-admin',
                     'feature ssh',
                     'vrf context management',
