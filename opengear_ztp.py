@@ -13,8 +13,8 @@ opengear_password = vault_creds['opengear_default_creds']['password']
 
 ## Get BNE Network Local Accounts ##
 admin_password = vault_creds['bne_network_local_accounts']['admin_password']
-bcadmin_password = vault_creds['bne_network_local_accounts']['bcadmin_password']
-nbcuadmin_password = vault_creds['bne_network_local_accounts']['nbcuadmin_password']
+bcadmin_password = vault_creds['bne_network_local_accounts']['badmin_password']
+nbcuadmin_password = vault_creds['bne_network_local_accounts']['cuadmin_password']
 
 
 def ncs540_ssh_config(router_hostname, management_ip, management_subnet ,management_gw, opengear_ip, opengear_serial_port):
@@ -74,19 +74,16 @@ def ncs540_ssh_config(router_hostname, management_ip, management_subnet ,managem
                     f'username admin secret {admin_password}',
                     'username admin group root-lr',
                     'username admin group cisco-support',
-                    f'username bcadmin secret {bcadmin_password}',
+                    f'username bcadmin secret {badmin_password}',
                     'username bcadmin group root-lr',
                     'username bcadmin group cisco-support',
                     'username nbcuadmin group root-lr',
                     'username nbcuadmin group netadmin',
                     'username nbcuadmin group cisco-support',
-                    f'username nbcuadmin secret {nbcuadmin_password}',
+                    f'username nbcuadmin secret {cuadmin_password}',
                     f'hostname {router_hostname}',
-                    f'''banner motd @                                 N   N   BBBB    CCC   U   U
-                        This equipment is maintained     NN  N   B   B  C   C  U   U
-                        by NBC Universal's Broadcast     N N N   BBBB   C      U   U
-                        Network Engineering Group.       N  NN   B   B  C   C  U   U
-                                                        N   N   BBBB    CCC    UUU
+                    f'''banner motd @           
+                        the banner stuff
                         This equipment is for authorized use only.  Unauthorized use of this 
                         equipment is prohibited by law.   All usage is monitored and logged. 
                         {router_hostname} managed by BC TACACS v1.0            @''',
