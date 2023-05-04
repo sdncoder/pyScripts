@@ -112,19 +112,12 @@ def ncs540_ssh_config(router_hostname, management_ip, management_subnet ,managem
                     #### ACL NBCU-VTY-ACCESS ####
                     'ipv4 access-list nbcu-vty-access',
                     '10 remark subnets_allowed_for_remote_access',
-                    '20 permit ipv4 100.96.0.0/11 any',
-                    '30 permit ipv4 10.57.0.0/16 any',
-                    '40 permit ipv4 22.15.192.0/21 any',
-                    '50 permit ipv4 22.125.255.0/24 any',
-                    '60 permit ipv4 100.104.251.64 0.0.0.63 any',
+                    '20 permit ipv4 x.x.x.x/11 any',
                     '200 deny ipv4 any any log',
                     ### DOMAIN ###
                     'domain name inbcu.com',
-                    'domain vrf management name inbcu.com',
-                    'domain vrf management name-server 100.114.63.135',
-                    'domain vrf management name-server 100.126.20.61',
-                    'domain vrf management name-server 100.124.34.160',
-                    'domain vrf management name-server 100.117.72.50',
+                    'domain vrf management name x.com',
+                    'domain vrf management name-server x.x.x.x',
                     'domain vrf management lookup source-interface MgmtEth0/RSP0/CPU0/0',
                     #### SSH SERVER ####
                     'ssh server dscp 16',
