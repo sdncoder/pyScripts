@@ -11,7 +11,7 @@ print(vault_creds)
 opengear_username = vault_creds['opengear_default_creds']['username']
 opengear_password = vault_creds['opengear_default_creds']['password']
 
-## Get BNE Network Local Accounts ##
+## Get Network Local Accounts ##
 admin_password = vault_creds['bne_network_local_accounts']['admin_password']
 bcadmin_password = vault_creds['bne_network_local_accounts']['badmin_password']
 nbcuadmin_password = vault_creds['bne_network_local_accounts']['cuadmin_password']
