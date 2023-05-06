@@ -240,7 +240,7 @@ def nexus9300_ssh_config(router_hostname, management_ip, management_subnet ,mana
                     'feature ssh',
                     'vrf context management',
                     'ip domain-name inbcu.com',
-                    'ip name-server 100.114.63.135 100.117.72.50 100.126.20.61 100.124.34.160',
+                    'ip name-server 100.x.x.135 100.x.x.50 x.x.x.x.61',
                     f'ip route 0.0.0.0/0 {management_gw}',
                     'interface mgmt0',
                     'vrf member management',
