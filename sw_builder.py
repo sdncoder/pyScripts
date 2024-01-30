@@ -22,3 +22,4 @@ d={ 'hostname':sw_vars.hostname,
 # output
 result = src.substitute(d)
 print result
+
