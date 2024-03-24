@@ -67,3 +67,4 @@ with open("network_devices.txt") as switches:
         print('\n')
 
         net_connect.disconnect
+
